@@ -16,6 +16,8 @@ function fetchInfo()
 	var playerName = document.getElementById('playerCell');
 	var categoryName = document.getElementById('categoryCell');
 	var timeName = document.getElementById('timeCell');
+	var dateName = document.getElementById('dateCell');
+	var videoName = document.getElementById('videoCell');
 	//console.log(playerName);
 	fetch(apiUrl)
   .then(function(response) {
@@ -40,6 +42,8 @@ function fetchInfo()
 //console.log(JSON.parse(test33));
 	  playerName.innerHTML = obj.data.players.data[0].names.international;
 	  timeName.innerHTML = obj.data.times.primary_t;
+	  dateName.innerHTML = obj.data.date;
+	  videoName.innerHTML = obj.data.videos.links[0].uri;
 	  //categoryName.innerHTML = obj.data.category.data.variables.data[0].values.values.gq7jpmpq.label;
 	  //categoryName.innerHTML = obj.data.level.data.name + " " + obj.data.category.data.name + " " + eval(test33);
 	  categoryName.innerHTML = obj.data.level.data.name + " " + obj.data.category.data.name + " " + runDiffInput;
