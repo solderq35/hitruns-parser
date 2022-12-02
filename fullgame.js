@@ -67,7 +67,7 @@ function fetchInfo()
 	  reasonName.innerHTML = runReasonInput;
 	  //categoryName.innerHTML = obj.data.category.data.variables.data[0].values.values.gq7jpmpq.label;
 	  //categoryName.innerHTML = obj.data.level.data.name + " " + obj.data.category.data.name + " " + eval(test33);
-	  categoryName.innerHTML = obj.data.level.data.name + " " + obj.data.category.data.name + " " + runDiffInput;
+	  categoryName.innerHTML =  obj.data.category.data.name + " " + runDiffInput;
 	  //levelName.innerHTML = obj.data.level.data.name;
 
     });
