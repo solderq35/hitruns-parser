@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="style.css">
-<script src="fullgame.js"></script>
-<base target="_blank">
-<title>Hitruns Parser</title>
-</head>
-<body>
-<input onkeup="fetchInfo() type="text" id="runLink" value =  "https://www.speedrun.com/hitman_3/run/zx8rokem">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="fullgame.js"></script>
+    <base target="_blank" />
+    <title>Hitruns Parser</title>
+  </head>
+  <body>
+    <input onkeup="fetchInfo() type="text" id="runLink" value =
+    "https://www.speedrun.com/hitman_3/run/zx8rokem">
 
+    <button onclick="fetchInfo()">Click me</button>
+    <input onkeup="fetchInfo() type="text" id="diffInput" value = "SASO Pro">
+    <input onkeup="fetchInfo() type="text" id="reasonInput" value = "Molly">
+    <pre id="log"></pre>
 
-<button onclick="fetchInfo()">Click me</button>
-<input onkeup="fetchInfo() type="text" id="diffInput" value = "SASO Pro">
-<input onkeup="fetchInfo() type="text" id="reasonInput" value = "Molly">
-<pre id="log"></pre>
+    <table>
+      <tr>
+        <th>Player</th>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Time</th>
+        <th>Reason</th>
+        <th>Video</th>
+        <th>Time Calc</th>
+      </tr>
+      <tr>
+        <td id="playerCell"></td>
+        <td id="dateCell" class="center"></td>
+        <td id="categoryCell"></td>
+        <td id="timeCell" class="center"></td>
+        <td id="reasonCell"></td>
+        <td id="videoCell"></td>
+        <td id="grunCell"></td>
+      </tr>
+    </table>
 
-<table>
-  <tr>
-    <th>Player</th>
-	<th>Date</th>
-	<th>Category</th>
-	<th>Time</th>
-	<th>Reason</th>
-	<th>Video</th>
-    
-  </tr>
-  <tr>
-    <td id="playerCell"></td>
-	<td id="dateCell"></td>
-    <td id = "categoryCell"></td>
-	<td id="timeCell"></td>
-	<td id="reasonCell"></td>
-	<td id="videoCell"></td>
-  </tr>
-
-</table>
-
-<a href="index.html">Individual Levels</a>
-
-</body>
+    <br />
+    <br />
+    <a href="index.html">Individual Levels</a>
+  </body>
 </html>

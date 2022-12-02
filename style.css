@@ -1,10 +1,29 @@
-table, th, td {
-  border: 1px solid black;
+table,
+th,
+td {
+  border: 1px transparent;
   border-collapse: collapse;
+  text-align: left;
 }
-th, td {
+th,
+td {
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 30px;
   padding-right: 40px;
+  font-family: Arial;
+  font-size: 13px;
+}
+
+td.center {
+  text-align: center;
+}
+
+p {
+  font-family: Arial;
+}
+
+a {
+  font-family: Arial;
+  font-color: blue;
 }

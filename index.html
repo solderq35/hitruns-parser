@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="style.css">
-<script src="index.js"></script>
-<base target="_blank">
-<title>Hitruns Parser</title>
-</head>
-<body>
-<input onkeup="fetchInfo() type="text" id="runLink" value =  "https://www.speedrun.com/hitman_3/run/znqq2e8z">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <base target="_blank" />
+    <title>Hitruns Parser</title>
+  </head>
+  <body>
+    <input onkeup="fetchInfo() type="text" id="runLink" value =
+    "https://www.speedrun.com/hitman_3/run/znqq2e8z">
 
+    <button onclick="fetchInfo()">Click me</button>
+    <input onkeup="fetchInfo() type="text" id="diffInput" value = "Pro"> <input
+    onkeup="fetchInfo() type="text" id="reasonInput" value = "Molly">
+    <pre id="log"></pre>
 
-<button onclick="fetchInfo()">Click me</button>
-<input onkeup="fetchInfo() type="text" id="diffInput" value = "Pro">
-<input onkeup="fetchInfo() type="text" id="reasonInput" value = "Molly">
-<pre id="log"></pre>
+    <table>
+      <tr>
+        <th>Player</th>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Time</th>
+        <th>Reason</th>
+        <th>Video</th>
+      </tr>
+      <tr>
+        <td id="playerCell"></td>
+        <td id="dateCell" class="center"></td>
+        <td id="categoryCell"></td>
+        <td id="timeCell" class="center"></td>
+        <td id="reasonCell"></td>
+        <td id="videoCell"></td>
+      </tr>
+    </table>
 
-<table>
-  <tr>
-    <th>Player</th>
-	<th>Date</th>
-	<th>Category</th>
-	<th>Time</th>
-	<th>Reason</th>
-	<th>Video</th>
-    
-  </tr>
-  <tr>
-    <td id="playerCell"></td>
-	<td id="dateCell"></td>
-    <td id = "categoryCell"></td>
-	<td id="timeCell"></td>
-	<td id="reasonCell"></td>
-	<td id="videoCell"></td>
-  </tr>
-
-</table>
-
-<a href="fullgame.html">Full Game</a>
-
-</body>
+    <br />
+    <br />
+    <a href="fullgame.html">Full Game</a>
+  </body>
 </html>
