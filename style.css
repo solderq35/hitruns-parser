@@ -19,6 +19,13 @@ td.center {
   text-align: center;
 }
 
+table.toptable,
+td.toptable,
+th.toptable {
+  border: 1px transparent;
+  border-collapse: collapse;
+}
+
 p {
   font-family: Arial;
 }
@@ -26,4 +33,26 @@ p {
 a {
   font-family: Arial;
   font-color: blue;
+}
+
+input#runLink {
+  width: 400px;
+}
+
+th#toprunlabel {
+  width: 330px;
+}
+
+th#topdifflabel {
+  width: 125px;
+}
+
+th#toppatchlabel {
+  width: 150px;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  font-size: 24px;
 }

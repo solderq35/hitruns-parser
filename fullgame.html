@@ -7,13 +7,22 @@
     <title>Hitruns Parser</title>
   </head>
   <body>
+    <table class="toptable">
+      <tr class="toptable">
+        <th class="toptable" id="toprunlabel">Run Link Input</th>
+        <th class="toptable" id="topdifflabel">
+          Difficulty + Rating, CE Condition Input
+        </th>
+        <th class="toptable" id="toppatchlabel">Patch Invalidation Reason</th>
+      </tr>
+    </table>
     <input onkeup="fetchInfo() type="text" id="runLink" value =
-    "https://www.speedrun.com/hitman_3/run/zx8rokem">
+    "https://www.speedrun.com/hitman_3/run/zx8rokem"> <input onkeup="fetchInfo()
+    type="text" id="diffInput" value = "SASO Pro"> <input onkeup="fetchInfo()
+    type="text" id="reasonInput" value = "Molly">
+    <pre id="log"></pre>
 
     <button onclick="fetchInfo()">Click me</button>
-    <input onkeup="fetchInfo() type="text" id="diffInput" value = "SASO Pro">
-    <input onkeup="fetchInfo() type="text" id="reasonInput" value = "Molly">
-    <pre id="log"></pre>
 
     <table>
       <tr>
@@ -39,9 +48,10 @@
     <br />
     <br />
     <a href="index.html">Individual Levels</a>
-	
-	<p>
-	In case of possible formatting issues, when pasting into Google Sheets, use Ctrl+Shift+V (paste without formatting)
-	</p>
+
+    <p>
+      In case of possible formatting issues, when pasting into Google Sheets,
+      use Ctrl+Shift+V (paste without formatting)
+    </p>
   </body>
 </html>

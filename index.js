@@ -38,26 +38,24 @@ function fetchInfo() {
       storedText = text;
       const obj = JSON.parse(text);
       playerName.innerHTML = obj.data.players.data[0].names.international;
-	  var initialTime = obj.data.times.primary_t;
-	  var finalTime;
-	  var minutes;
-	  console.log(initialTime);
-	  if (initialTime < 60) {
-		finalTime = initialTime;
-		console.log(finalTime);
-	  }
-	  else if (initialTime >= 60) {
-		minutes = parseInt((initialTime / 60));
-		seconds = (initialTime % 60);
-		console.log(seconds);
-		if (seconds > 9 && minutes > 0){
-		finalTime = minutes.toString() + ":" + seconds.toString();
-		}
-		else if (seconds <= 9 && minutes > 0){ 
-			finalTime = minutes.toString() + ":0" + seconds.toString();
-		}
-		console.log(finalTime);
-	  }
+      var initialTime = obj.data.times.primary_t;
+      var finalTime;
+      var minutes;
+      console.log(initialTime);
+      if (initialTime < 60) {
+        finalTime = initialTime;
+        console.log(finalTime);
+      } else if (initialTime >= 60) {
+        minutes = parseInt(initialTime / 60);
+        seconds = initialTime % 60;
+        console.log(seconds);
+        if (seconds > 9 && minutes > 0) {
+          finalTime = minutes.toString() + ":" + seconds.toString();
+        } else if (seconds <= 9 && minutes > 0) {
+          finalTime = minutes.toString() + ":0" + seconds.toString();
+        }
+        console.log(finalTime);
+      }
       timeName.innerHTML = finalTime;
       dateName.innerHTML = obj.data.date;
       videoName.innerHTML = obj.data.videos.links[0].uri.linkify();
