@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+</style>
+<script src="index.js"></script>
+<title>Page Title</title>
+</head>
+<body>
+<input onkeup="fetchInfo() type="text" id="runLink" value =  "https://www.speedrun.com/hitman_3/run/znqq2e8z">
+
+
+<button onclick="fetchInfo()">Click me</button>
+<input onkeup="fetchInfo() type="text" id="diffInput" value = "Pro">
+<pre id="log"></pre>
+
+<table>
+  <tr>
+    <th>Player</th>
+	<th>Time</th>
+    <th>Category</th>
+    
+  </tr>
+  <tr>
+    <td id="playerCell">Alfreds Futterkiste</td>
+    <td id="timeCell">Maria Anders</td>
+    <td id = "categoryCell">Germany</td>
+  </tr>
+
+</table>
+
+</body>
+</html>
