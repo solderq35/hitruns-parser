@@ -34,6 +34,7 @@ function fetchInfo() {
   var videoName = document.getElementById("videoCell");
   var reasonName = document.getElementById("reasonCell");
   var grunName = document.getElementById("grunCell");
+  var apiUrlName = document.getElementById("apiUrlDiv");
 
   fetch(apiUrl).then(function (response) {
     response.text().then(function (text) {
@@ -48,6 +49,7 @@ function fetchInfo() {
       var commentInitial = obj.data.comment;
       var linkextract = commentInitial.match(/\bhttps?:\/\/\S+/gi);
       grunName.innerHTML = linkextract.toString().linkify();
+      apiUrlName.innerHTML = apiUrl.linkify();
     });
   });
 }

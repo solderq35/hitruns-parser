@@ -33,6 +33,8 @@ function fetchInfo() {
   var dateName = document.getElementById("dateCell");
   var videoName = document.getElementById("videoCell");
   var reasonName = document.getElementById("reasonCell");
+  var apiUrlName = document.getElementById("apiUrlDiv");
+
   fetch(apiUrl).then(function (response) {
     response.text().then(function (text) {
       storedText = text;
@@ -66,6 +68,7 @@ function fetchInfo() {
         obj.data.category.data.name +
         " " +
         runDiffInput;
+      apiUrlName.innerHTML = apiUrl.linkify();
     });
   });
 }
