@@ -1,9 +1,10 @@
 table,
 th,
 td {
-  border: 1px transparent;
+  border: 1px black solid;
   border-collapse: collapse;
   text-align: left;
+  width: 140px;
 }
 th,
 td {
@@ -14,9 +15,13 @@ td {
   font-family: Arial;
   font-size: 13px;
 }
+table {
+  table-layout: fixed;
+}
 
-td.center {
-  text-align: center;
+td {
+  word-wrap: break-word;
+  vertical-align: top;
 }
 
 table.toptable,

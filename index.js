@@ -1,5 +1,6 @@
 var storedText;
 
+//https://stackoverflow.com/questions/37684/how-to-replace-plain-urls-with-links
 if (!String.linkify) {
   String.prototype.linkify = function () {
     // http://, https://, ftp://
@@ -40,23 +41,48 @@ function fetchInfo() {
       storedText = text;
       const obj = JSON.parse(text);
       playerName.innerHTML = obj.data.players.data[0].names.international;
+      var finaltime;
       var initialTime = obj.data.times.primary_t;
       var finalTime;
       var minutes;
+      var seconds;
+      var hours;
       console.log(initialTime);
-      if (initialTime < 60) {
-        finalTime = initialTime;
-        console.log(finalTime);
-      } else if (initialTime >= 60) {
-        minutes = parseInt(initialTime / 60);
+      if (initialTime >= 3600) {
+        hours = parseInt(initialTime / 3600);
+        // console.log(hours);
+        minutes = parseInt(initialTime / 60) - hours * 60;
         seconds = initialTime % 60;
-        console.log(seconds);
         if (seconds > 9 && minutes > 0) {
-          finalTime = minutes.toString() + ":" + seconds.toString();
+          finalTime =
+            hours.toString() +
+            ":" +
+            minutes.toString() +
+            ":" +
+            seconds.toString();
         } else if (seconds <= 9 && minutes > 0) {
-          finalTime = minutes.toString() + ":0" + seconds.toString();
+          finalTime =
+            hours.toString() +
+            ":" +
+            minutes.toString() +
+            ":0" +
+            seconds.toString();
+          console.log(hours);
         }
-        console.log(finalTime);
+      } else {
+        if (initialTime < 60 && initialTime >= 10) {
+          finalTime = "0:" + initialTime;
+        } else if (initialTime <= 9) {
+          finalTime = "0:0" + initialTime;
+        } else if (initialTime >= 60) {
+          minutes = parseInt(initialTime / 60);
+          seconds = initialTime % 60;
+          if (seconds > 9 && minutes > 0) {
+            finalTime = minutes.toString() + ":" + seconds.toString();
+          } else if (seconds <= 9 && minutes > 0) {
+            finalTime = minutes.toString() + ":0" + seconds.toString();
+          }
+        }
       }
       timeName.innerHTML = finalTime;
       dateName.innerHTML = obj.data.date;
