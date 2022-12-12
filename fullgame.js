@@ -41,7 +41,7 @@ function fetchInfo() {
     response.text().then(function (text) {
       storedText = text;
       const obj = JSON.parse(text);
-      playerName.innerHTML = obj.data.players.data[0].names.international;
+      //playerName.innerHTML = obj.data.players.data[0].names.international;
 
       var finaltime;
       var initialTime = obj.data.times.primary_t;
@@ -49,7 +49,14 @@ function fetchInfo() {
       var minutes;
       var seconds;
       var hours;
-      console.log(initialTime);
+      //console.log(initialTime);
+
+      if (obj.data.players.data[0].rel == "user") {
+        playerName.innerHTML = obj.data.players.data[0].names.international;
+      } else if (obj.data.players.data[0].rel == "guest") {
+        playerName.innerHTML = obj.data.players.data[0].name;
+      }
+
       if (initialTime >= 3600) {
         hours = parseInt(initialTime / 3600);
         // console.log(hours);
@@ -69,7 +76,7 @@ function fetchInfo() {
             minutes.toString() +
             ":0" +
             seconds.toString();
-          console.log(hours);
+          //console.log(hours);
         }
       } else {
         if (initialTime < 60 && initialTime >= 10) {
