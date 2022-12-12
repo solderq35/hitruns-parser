@@ -99,9 +99,14 @@ function fetchInfo() {
       reasonName.innerHTML = runReasonInput;
       categoryName.innerHTML = obj.data.category.data.name + " " + runDiffInput;
       let commentInitial = obj.data.comment;
+      //console.log(commentInitial);
       let linkextract = commentInitial.match(/\bhttps?:\/\/\S+/gi);
-      grunName.innerHTML = linkextract.toString().linkify();
+      let apostropheReplace = linkextract.toString().replace(/'/g, "%27");
+      //console.log(apostropheReplace);
+      grunName.innerHTML = apostropheReplace.linkify();
       apiUrlName.innerHTML = apiUrl.linkify();
+
+      //console.log(linkextract);
     });
   });
 }
