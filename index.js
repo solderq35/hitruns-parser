@@ -24,7 +24,7 @@ function fetchInfo() {
   let runDiffInput = document.getElementById("diffInput").value;
   let runReasonInput = document.getElementById("reasonInput").value;
   let idslice = runLinkInput.slice(-8);
-  let playerEmbed = "?embed=players,category.letiables,level";
+  let playerEmbed = "?embed=players,category.variables,level";
   let idPlusEmbeds = idslice.concat(playerEmbed);
   let apiDomain = "https://www.speedrun.com/api/v1/runs/";
   let apiUrl = apiDomain.concat(idPlusEmbeds);
