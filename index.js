@@ -27,22 +27,26 @@ function fetchInfo() {
   let playerEmbed = "?embed=players,category.variables,level";
   let idPlusEmbeds = idslice.concat(playerEmbed);
   let apiDomain = "https://www.speedrun.com/api/v1/runs/";
-  let apiUrl = apiDomain.concat(idPlusEmbeds);
-  let playerName = document.getElementById("playerCell");
-  let categoryName = document.getElementById("categoryCell");
-  let timeName = document.getElementById("timeCell");
-  let dateName = document.getElementById("dateCell");
-  let videoName = document.getElementById("videoCell");
-  let reasonName = document.getElementById("reasonCell");
-  let apiUrlName = document.getElementById("apiUrlDiv");
+  //https://www.speedrun.com/api/v1/leaderboards/j1ne5891/level/y9mg6vx9/7kj890zd?var-p854xo3l=21g85z6l&var-ylpe1pv8=klrpdvwq&embed=platforms%2Cplayers&timing=realtime_noloads&top=1
+  //let apiUrl = "https://www.speedrun.com/api/v1/runs/znqq2e8z?embed=players,category.variables,level";
+  let apiUrl = "https://www.speedrun.com/api/v1/leaderboards/j1ne5891/level/y9mg6vx9/7kj890zd?var-p854xo3l=21g85z6l&var-ylpe1pv8=klrpdvwq&embed=players,category.variables,level&top=1"
+  let apiUrl2 = "https://www.speedrun.com/api/v1/leaderboards/j1ne5891/level/y9mg6vx9/7kj890zd?var-p854xo3l=21g85z6l&var-ylpe1pv8=klrpdvwq&embed=players,category.variables,level&top=1"
+  let playerName = document.getElementById("playerCell_0");
+  let categoryName = document.getElementById("categoryCell_0");
+  let timeName = document.getElementById("timeCell_0");
+  let dateName = document.getElementById("dateCell_0");
+  let videoName = document.getElementById("videoCell_0");
+  let reasonName = document.getElementById("reasonCell_0");
+  let apiUrlName = document.getElementById("apiUrlDiv_0");
 
   fetch(apiUrl).then(function (response) {
     response.text().then(function (text) {
       storedText = text;
       const obj = JSON.parse(text);
+	  console.log(obj.data.runs[0].run.times.primary_t);
       //playerName.innerHTML = obj.data.players.data[0].names.international;
       let finaltime;
-      let initialTime = obj.data.times.primary_t;
+      let initialTime = obj.data.runs[0].run.times.primary_t;
       let finalTime;
       let minutes;
       let seconds;
@@ -104,9 +108,13 @@ function fetchInfo() {
       apiUrlName.innerHTML = apiUrl.linkify();
     });
   });
+  
 }
 
 function done() {
   document.getElementById("log").textContent =
     "Here's what I got! \n" + storedText;
 }
+
+
+window.onload = fetchInfo;
