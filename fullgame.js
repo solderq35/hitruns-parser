@@ -102,8 +102,9 @@ function fetchInfo() {
       //console.log(commentInitial);
       let linkextract = commentInitial.match(/\bhttps?:\/\/\S+/gi);
       let apostropheReplace = linkextract[0].toString().replace(/'/g, "%27");
+      let rightParenthesisReplace = apostropheReplace.replace(/\)/g, "");
       //console.log(apostropheReplace);
-      grunName.innerHTML = apostropheReplace.linkify();
+      grunName.innerHTML = rightParenthesisReplace.linkify();
       apiUrlName.innerHTML = apiUrl.linkify();
 
       //console.log(linkextract);
